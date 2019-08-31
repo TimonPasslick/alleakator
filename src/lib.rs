@@ -1,3 +1,5 @@
+#![no_std]
+
 use core::alloc::{GlobalAlloc as A, Layout as L};
 
 pub struct Alleakator<P: A> {

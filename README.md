@@ -21,6 +21,8 @@ use alleakator::Alleakator;
 static GLOBAL: Alleakator<YourAllocator> = Alleakator<YourAllocator>;
 ```
 
+This works even if you don't use the standard library.
+
 ## Implementation
 
 All function calls are forwarded to a parent allocator that you can specify except `dealloc`, which is just empty.
