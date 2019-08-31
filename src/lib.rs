@@ -1,16 +1,22 @@
-use core::alloc::{GlobalAlloc, Layout};
+use core::alloc::{GlobalAlloc as A, Layout as L};
 
-pub struct Alleakator<PA: GlobalAlloc> {
-    parent_allocator: PA,
+pub struct Alleakator<P: A> {
+    p: P,
 }
 
-unsafe impl<PA: GlobalAlloc> GlobalAlloc for Alleakator<PA> {
-    unsafe fn dealloc(&self, _: *mut u8, _: Layout) {
+type B = *mut u8;
+
+unsafe impl<P: A> A for Alleakator<P> {
+    unsafe fn dealloc(&self, _: B, _: L) {
         //do absolutely nothing
     }
-    unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
-        self.parent_allocator.alloc(layout)
+    unsafe fn alloc(&self, a: L) -> B {
+        self.p.alloc(a)
     }
-    unsafe fn realloc(&self) {}
-    unsafe fn alloc_zeroed(&self)
+    unsafe fn realloc(&self, a: B, b: L, c: usize) -> B {
+        self.p.realloc(a, b, c)
+    }
+    unsafe fn alloc_zeroed(&self, a: L) -> B {
+        self.p.alloc_zeroed(a)
+    }
 }
