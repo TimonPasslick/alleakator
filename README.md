@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
     <a href="https://crates.io/crates/alleakator" alt="crates.io">
         <img src="https://img.shields.io/crates/v/alleakator" /></a>
 </p>
