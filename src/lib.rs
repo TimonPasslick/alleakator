@@ -1,14 +1,14 @@
 #![no_std]
 
-use core::alloc::{GlobalAlloc as A, Layout as L};
+use core::alloc::{GlobalAlloc, Layout as L};
 
-pub struct Alleakator<P: A> {
+pub struct Alleakator<P: GlobalAlloc> {
     p: P,
 }
 
 type B = *mut u8;
 
-unsafe impl<P: A> A for Alleakator<P> {
+unsafe impl<P: GlobalAlloc> GlobalAlloc for Alleakator<P> {
     unsafe fn dealloc(&self, _: B, _: L) {
         //do absolutely nothing
     }
