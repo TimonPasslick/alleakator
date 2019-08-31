@@ -1,8 +1,9 @@
 [package]
 name = "alleakator"
-license = "MIT"
 description = "leaking global allocator"
 version = "1.0.0"
+repository = "https://github.com/TimonPasslick/alleakator"
+license = "MIT"
 authors = ["Timon Paßlick <timon.passlick@gmx.de>"]
 edition = "2018"
 
