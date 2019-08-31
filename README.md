@@ -2,7 +2,7 @@
 
 ![alt=crocodile](https://images.emojiterra.com/google/android-pie/128px/1f40a.png)
 
-alleakator provides a global allocator that leaks memory on purpose.
+`alleakator` provides a global allocator that leaks memory on purpose.
 
 ## Motivation
 
@@ -18,12 +18,12 @@ Add this to your main.rs:
 use alleakator::Alleakator;
 
 #[global_allocator]
-static GLOBAL: Alleakator = Alleakator;
+static GLOBAL: Alleakator<YourAllocator> = Alleakator<YourAllocator>;
 ```
 
 ## Implementation
 
-While that is subject to change (some time), right now, this is a copy paste of the `std::alloc::System` allocator with an empty dealloc function.
+All function calls are forwarded to a parent allocator that you can specify except `dealloc`, which is just empty.
 
 ## Contributing
 
