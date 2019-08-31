@@ -1,3 +1,8 @@
+<p align="center">
+    <a href="https://crates.io/crates/alleakator" alt="crates.io">
+        <img src="https://img.shields.io/crates/v/alleakator" /></a>
+</p>
+
 # alleakator
 
 ![alt=crocodile](https://images.emojiterra.com/google/android-pie/128px/1f40a.png)
