@@ -1,10 +1,13 @@
 [package]
 name = "alleakator"
 description = "leaking global allocator"
-version = "1.0.1"
+version = "1.0.2"
 repository = "https://github.com/TimonPasslick/alleakator"
 license = "MIT"
 authors = ["Timon Paßlick <timon.passlick@gmx.de>"]
+readme = "README.md"
+keywords = ["leak", "allocator"]
+categories = ["memory-management", "no_std"]
 edition = "2018"
 
 [dependencies]
